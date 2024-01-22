@@ -23,13 +23,15 @@ font-size: 62.5%;
 }
 
 html, body, #__next {
-  height: 100vh;
-  max-width: 100vw;
+max-width: 100vw;
   background: var(--background);
   color: var(--white);
 }
 
 body {
+  width: 100%;
+  height: 100vh;
+
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
