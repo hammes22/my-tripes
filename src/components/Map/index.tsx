@@ -39,13 +39,11 @@ const Map = ({ places }: MapProps) => {
   return (
     <S.MapWrapper>
       <MapContainer
-        style={{ width: '100%', height: '100%' }}
         center={mapView.center}
         zoom={mapView.zoom}
-        minZoom={2}
         maxBounds={[
-          [-180, 180],
-          [180, -180]
+          [-90, -180],
+          [90, 180]
         ]}
       >
         <CustomTileLayer />

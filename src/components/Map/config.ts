@@ -8,7 +8,7 @@ export type MapView = {
 
 export const mapView: MapView = {
   center: [0, 0],
-  zoom: 1,
+  zoom: 2.38,
   setView(center: LatLngExpression, zoom?: number) {
     this.center = center
     if (zoom) {

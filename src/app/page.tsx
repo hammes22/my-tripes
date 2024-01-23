@@ -8,5 +8,9 @@ const Map = dynamic(() => import('@/components/Map'), { ssr: false })
 export default function Home() {
   // const { asPath } = useRouter()
 
-  return <Map />
+  return (
+    <div style={{ width: '100%', height: '100%' }}>
+      <Map />
+    </div>
+  )
 }
