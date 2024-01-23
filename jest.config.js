@@ -17,7 +17,8 @@ const customJestConfig = {
     '^@/(.*)$': '<rootDir>/src/$1' // Mapeamento para módulos src
   },
   moduleDirectories: ['node_modules', 'src'],
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json']
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+  transformIgnorePatterns: ['/node_modules/']
 }
 
 // Exporte createJestConfig desta forma para garantir que next/jest possa carregar a configuração Next.js, que é assíncrona

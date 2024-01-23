@@ -50,7 +50,7 @@ const Map = ({ places }: MapProps) => {
 
         <MapEvents />
 
-        {places?.map(({ id, slug, name, location }) => {
+        {places?.map(({ id, name, location }) => {
           const { latitude, longitude } = location
 
           return (

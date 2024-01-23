@@ -18,7 +18,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@public/*": ["./public/*"]
     },
     "types": ["jest"]
   },
@@ -31,7 +32,8 @@
     "jest.setup.js",
     "next.config.js",
     "src/components/Main/.test.ts",
-    "src/components/Main/.test.tsx"
+    "src/components/Main/.test.tsx",
+    "src/components/Map/map.test.tsx"
   ],
   "exclude": ["node_modules"]
 }
