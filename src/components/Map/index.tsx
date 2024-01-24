@@ -1,7 +1,15 @@
-import { MapContainer, TileLayer, Marker, useMapEvent } from 'react-leaflet'
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  useMapEvent,
+  Tooltip
+} from 'react-leaflet'
+
 import * as S from './styles'
 import { mapView } from './config'
 import 'leaflet/dist/leaflet.css'
+import L from 'leaflet'
 
 type Place = {
   id: string
@@ -36,6 +44,16 @@ const CustomTileLayer = () => {
 }
 
 const Map = ({ places }: MapProps) => {
+  const icon = new L.Icon({
+    iconRetinaUrl: '/leaflet/marker-icon-2x.png',
+    iconUrl: '/leaflet/marker-icon.png',
+    shadowUrl: '/leaflet/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  })
+
   return (
     <S.MapWrapper>
       <MapContainer
@@ -55,10 +73,13 @@ const Map = ({ places }: MapProps) => {
 
           return (
             <Marker
+              icon={icon}
               key={`place-${id}`}
               position={[latitude, longitude]}
               title={name}
-            />
+            >
+              <Tooltip>{name}</Tooltip>
+            </Marker>
           )
         })}
       </MapContainer>
