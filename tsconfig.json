@@ -34,6 +34,6 @@
     "src/components/Main/.test.ts",
     "src/components/Main/.test.tsx",
     "src/components/Map/map.test.tsx"
-, "src/components/LinkWrapper/.test.tsx"  ],
+, "src/components/LinkWrapper/.test.tsx", "src/app/pages"  ],
   "exclude": ["node_modules"]
 }
