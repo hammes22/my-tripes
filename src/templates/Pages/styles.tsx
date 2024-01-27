@@ -6,12 +6,13 @@ export const Content = styled.section`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   max-width: var(--container);
   margin: auto;
 `
 
 export const Heading = styled.h1`
+  margin-top: var(--large);
   font-size: var(--large);
   margin-bottom: var(--large);
 `
