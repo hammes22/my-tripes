@@ -3,6 +3,7 @@ import React from 'react'
 import LinkWrapper from '@/components/LinkWrapper'
 import { CloseOutline } from '@styled-icons/evaicons-outline'
 import * as S from './styles'
+import { useParams, useRouter } from 'next/navigation'
 
 export type PageTemplateProps = {
   heading: string
