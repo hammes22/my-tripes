@@ -15,7 +15,13 @@ const config: CodegenConfig = {
   generates: {
     'src/graphql/generated/': {
       preset: 'client',
-      plugins: []
+      plugins: [
+        {
+          add: {
+            content: '/* eslint-disable */'
+          }
+        }
+      ]
     }
   }
 }

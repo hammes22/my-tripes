@@ -10,6 +10,7 @@ import * as S from './styles'
 import { mapView } from './config'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
+import { useRouter } from 'next/navigation'
 
 type Place = {
   id: string
@@ -54,6 +55,8 @@ const Map = ({ places }: MapProps) => {
     shadowSize: [41, 41]
   })
 
+  const { push } = useRouter()
+
   return (
     <S.MapWrapper>
       <MapContainer
@@ -68,7 +71,7 @@ const Map = ({ places }: MapProps) => {
 
         <MapEvents />
 
-        {places?.map(({ id, name, location }) => {
+        {places?.map(({ id, slug, name, location }) => {
           const { latitude, longitude } = location
 
           return (
@@ -77,6 +80,11 @@ const Map = ({ places }: MapProps) => {
               key={`place-${id}`}
               position={[latitude, longitude]}
               title={name}
+              eventHandlers={{
+                click: () => {
+                  push(`/place/${slug}`)
+                }
+              }}
             >
               <Tooltip>{name}</Tooltip>
             </Marker>
